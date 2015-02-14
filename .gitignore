@@ -1,0 +1,7 @@
+.idea
+venv
+*.egg*
+dist
+docs/output
+*.pyc
+__pycache__
