@@ -1,11 +1,10 @@
-Flask-SQLAlchemySession
------------------------
+##Flask-SQLAlchemySession
+
 Provides an SQLAlchemy scoped session that creates
 unique sessions per Flask request, following the guidelines documented at
 [Using Custom Created Scopes](http://docs.sqlalchemy.org/en/rel_0_9/orm/contextual.html#using-custom-created-scopes).
 
-Basic usage
------------
+###Usage
 
 Initialize a `flask_scoped_session` as you would a
 `scoped_session`, with the addition of a Flask
