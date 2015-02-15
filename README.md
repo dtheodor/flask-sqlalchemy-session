@@ -4,6 +4,8 @@ Provides an SQLAlchemy scoped session that creates
 unique sessions per Flask request, following the guidelines documented at
 [Using Custom Created Scopes](http://docs.sqlalchemy.org/en/rel_0_9/orm/contextual.html#using-custom-created-scopes).
 
+[Documentation ![Documentation Status](https://readthedocs.org/projects/flask-sqlalchemy-session/badge/?version=latest)](http://flask-sqlalchemy-session.readthedocs.org/en/latest/)
+
 ###Usage
 
 Initialize a `flask_scoped_session` as you would a
