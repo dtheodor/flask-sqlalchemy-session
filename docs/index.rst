@@ -134,5 +134,13 @@ API
 ---
 
 .. automodule:: flask_sqlalchemy_session
-    :members:
-    :special-members:
+
+    .. data:: current_session
+
+        Provides the current SQL Alchemy session within a request.
+
+    .. autoclass:: flask_scoped_session
+        :members:
+        :special-members:
+
+
