@@ -29,3 +29,14 @@ def user(user_id):
 The `current_session` is also provided as a convenient accessor to the session
 of the current request, in the same spirit of `flask.request` and
 `flask.current_app`.
+
+```python
+from flask_sqlalchemy_session import current_session
+
+@app.route("/users/<int:user_id>")
+def user(user_id):
+    user = current_session.query(User).get(user_id)
+    if user is None:
+        abort(404)
+    return flask.jsonify(**user.to_dict())
+```
