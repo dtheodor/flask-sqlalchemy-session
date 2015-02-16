@@ -112,22 +112,19 @@ Comparison with Flask-SQLAlchemy
 --------------------------------
 
 The `Flask-SQLAlchemy <https://pythonhosted.org/Flask-SQLAlchemy/>`_ project
-also provides a request-scoped session. It comes an API that
-acts as a facade over various SQL Alchemy APIs (engines,
+also provides a request-scoped session, along with much more. It comes an API
+that acts as a facade over various SQL Alchemy APIs (engines,
 models, metadata). This API buries the
 engine/session initialization behind the Flask app initialization, detracts
-from the original by removing decisions, confuses a user
-already familiar with SQL Alchemy, and tightly couples the data layer with the
-Flask app.
+from the original by removing decisions, and tightly couples the data layer with
+the Flask app. On the good side, it is an API easier to start with than SQL
+Alchemy itself.
 
 Flask-SQLAlchemySession is not
 intrusive to the original SQL Alchemy APIs in any way, and
 does not force you to couple your data layer with your web application. It's
 sole purpose is to enable request-scoped sessions on top of
-your SQL Alchemy constructs. In my opinion, if you use
-SQL Alchemy you should be using the original API and its accompanying
-documentation and not be trying to juggle with multiple APIs and documentations
-for the same purpose.
+your SQL Alchemy constructs.
 
 
 API
