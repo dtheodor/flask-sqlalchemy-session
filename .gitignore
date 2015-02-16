@@ -2,6 +2,7 @@
 venv
 *.egg*
 dist
-docs/output
+docs/_build
 *.pyc
 __pycache__
+.vagrant

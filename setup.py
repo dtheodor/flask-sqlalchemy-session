@@ -1,20 +1,20 @@
 """
-Flask-SQLAlchemySession
+Flask-SQLAlchemy-Session
 -----------------------
 
-Provides an SQL Alchemy scoped session that will create unique sessions per
-Flask request.
-
-http://docs.sqlalchemy.org/en/rel_0_9/orm/contextual.html#using-custom-created-scopes
+Provides an SQLAlchemy scoped session that creates
+unique sessions per Flask request
 """
 from setuptools import setup
 
-setup(name="Flask-SQLAlchemySession",
+setup(name="Flask-SQLAlchemy-Session",
       version="1.0",
       packages=["flask_sqlalchemy_session"],
       author="Dimitris Theodorou",
+      author_email="dimitris.theodorou@gmail.com",
       url='http://github/dtheodor/flask-sqlalchemy-session',
-      description='SQL Alchemy session scoped on Flask requests',
+      license="MIT",
+      description='SQL Alchemy session scoped on Flask requests.',
       long_description=__doc__,
       classifiers=[
           'Development Status :: 5 - Production/Stable',

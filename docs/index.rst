@@ -1,11 +1,11 @@
 =======================
-Flask-SQLAlchemySession
+Flask-SQLAlchemy-Session
 =======================
 .. toctree::
    :maxdepth: 2
 .. currentmodule:: flask_sqlalchemy_session
 
-Flask-SQLALchemySession is a tiny library providing an SQLAlchemy scoped
+Flask-SQLALchemy-Session is a tiny library providing an SQLAlchemy scoped
 session that creates
 unique sessions per Flask request, following the guidelines documented at
 `Using Custom Created Scopes <http://docs.sqlalchemy.org/en/rel_0_9/orm/contextual.html#using-custom-created-scopes>`_.
