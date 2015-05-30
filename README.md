@@ -1,6 +1,6 @@
 ##Flask-SQLAlchemySession
 
-[![Latest Version](https://pypip.in/version/Flask-SQLAlchemy-Session/badge.svg)](https://pypi.python.org/pypi/Flask-SQLAlchemy-Session/)
+[![TravisCI](https://travis-ci.org/dtheodor/flask-sqlalchemy-session.svg?branch=tox_travis)](https://travis-ci.org/dtheodor/flask-sqlalchemy-session)
 [![Documentation Status](https://readthedocs.org/projects/flask-sqlalchemy-session/badge/?version=latest)](http://flask-sqlalchemy-session.readthedocs.org/en/latest/)
 
 Provides an SQLAlchemy scoped session that creates
