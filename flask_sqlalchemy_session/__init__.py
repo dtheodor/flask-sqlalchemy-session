@@ -16,7 +16,7 @@ def _get_session():
     app = current_app._get_current_object()
     if not hasattr(app, "scoped_session"):
         raise AttributeError(
-            "{} has no 'scoped_session' attribute. You need to initialize it "
+            "{0} has no 'scoped_session' attribute. You need to initialize it "
             "with a flask_scoped_session.".format(app))
     return app.scoped_session
 
