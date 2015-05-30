@@ -4,7 +4,6 @@ python:
 env:
   - TOXENV=py26
   - TOXENV=py27
-  - TOXENV=py32
   - TOXENV=py33
   - TOXENV=py34
   - TOXENV=pypy
@@ -13,3 +12,6 @@ install:
   - "pip install tox"
 # command to run tests
 script: tox
+branches:
+  only:
+    - master
