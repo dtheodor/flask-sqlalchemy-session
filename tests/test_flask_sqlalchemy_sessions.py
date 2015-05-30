@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 import pytest
-import mock
+try:
+    from unittest import mock
+except ImportError:
+    import mock
 from flask import Flask
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
