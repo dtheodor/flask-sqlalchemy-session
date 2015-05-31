@@ -44,3 +44,8 @@ def user(user_id):
         abort(404)
     return flask.jsonify(**user.to_dict())
 ```
+
+
+### Tests
+
+You can run the tests by invoking `PYTHONPATH=. py.test tests/` in the repository root.
