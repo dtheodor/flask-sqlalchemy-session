@@ -1,13 +1,22 @@
 # -*- coding: utf-8 -*-
+"""
+Flask-SQLAlchemy-Session
+-----------------------
+
+Provides an SQLAlchemy scoped session that creates
+unique sessions per Flask request
+"""
+# pylint: disable=invalid-name
 from werkzeug.local import LocalProxy
 from flask import _app_ctx_stack, current_app
 from sqlalchemy.orm import scoped_session
 
-
 __all__ = ["current_session", "flask_scoped_session"]
+__version__ = 1.0
 
 
 def _get_session():
+    # pylint: disable=missing-docstring, protected-access
     context = _app_ctx_stack.top
     if context is None:
         raise RuntimeError(
@@ -22,7 +31,11 @@ def _get_session():
 
 
 current_session = LocalProxy(_get_session)
-"""Provides the current SQL Alchemy session within a request."""
+"""Provides the current SQL Alchemy session within a request.
+
+Will raise an exception if no :data:`~flask.current_app` is available or it has
+not been initialized with a :class:`flask_scoped_session`
+"""
 
 
 class flask_scoped_session(scoped_session):
@@ -54,4 +67,5 @@ class flask_scoped_session(scoped_session):
 
         @app.teardown_appcontext
         def remove_scoped_session(*args, **kwargs):
+            # pylint: disable=missing-docstring,unused-argument,unused-variable
             app.scoped_session.remove()
