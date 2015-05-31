@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Version 1.1
+-----------
+
+Released on 2015-05-31.
+
+Add support for Python 2.6-3.4, pypy, and SQL Alchemy 0.9-1.0.
+
 Version 1.0
 -----------
 

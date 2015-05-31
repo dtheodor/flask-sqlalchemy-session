@@ -12,7 +12,7 @@ from flask import _app_ctx_stack, current_app
 from sqlalchemy.orm import scoped_session
 
 __all__ = ["current_session", "flask_scoped_session"]
-__version__ = 1.0
+__version__ = 1.1
 
 
 def _get_session():
