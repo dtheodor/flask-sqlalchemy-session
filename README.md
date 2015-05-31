@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/dtheodor/flask-sqlalchemy-session.svg?branch=master)](https://travis-ci.org/dtheodor/flask-sqlalchemy-session)
 [![Coverage Status](https://coveralls.io/repos/dtheodor/flask-sqlalchemy-session/badge.svg)](https://coveralls.io/r/dtheodor/flask-sqlalchemy-session)
-[![Documentation Status](https://readthedocs.org/projects/flask-sqlalchemy-session/badge/?version=v1.1)](https://readthedocs.org/projects/flask-sqlalchemy-session/?badge=v1.1)
 
 Provides an SQLAlchemy scoped session that creates
 unique sessions per Flask request, following the guidelines documented at
