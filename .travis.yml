@@ -15,3 +15,5 @@ script: tox
 branches:
   only:
     - master
+notifications:
+  email: false
