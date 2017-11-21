@@ -1,4 +1,4 @@
-##Flask-SQLAlchemySession
+## Flask-SQLAlchemySession
 
 [![Build Status](https://travis-ci.org/dtheodor/flask-sqlalchemy-session.svg?branch=master)](https://travis-ci.org/dtheodor/flask-sqlalchemy-session)
 [![Coverage Status](https://coveralls.io/repos/dtheodor/flask-sqlalchemy-session/badge.svg)](https://coveralls.io/r/dtheodor/flask-sqlalchemy-session)
@@ -9,7 +9,7 @@ unique sessions per Flask request, following the guidelines documented at
 
 http://flask-sqlalchemy-session.readthedocs.org
 
-###Usage
+### Usage
 
 Initialize a `flask_scoped_session` as you would a
 `scoped_session`, with the addition of a Flask
