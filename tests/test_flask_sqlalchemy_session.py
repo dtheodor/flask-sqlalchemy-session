@@ -28,7 +28,7 @@ def flask_app():
 
 @pytest.fixture
 def unitialized_session(sqlite_engine):
-    """Return a request_scoped_session that has not been used for a flask app"""
+    """Return a request_scoped_session that has not been used for flask app"""
     ses = flask_scoped_session(sessionmaker(bind=sqlite_engine))
     _remove = ses.remove
     ses.remove = mock.Mock(side_effect=_remove)
@@ -67,7 +67,6 @@ class TestRequestScopedSession(object):
 
         assert session.remove.call_count == 1
 
-
     def test_session_different_request(self, flask_app, session):
         with flask_app.test_request_context():
             prev_id = id(session())
@@ -88,7 +87,6 @@ class TestCurrentSession(object):
             assert isinstance(current_session._get_current_object()(), Session)
             assert current_session._get_current_object()() is \
                    current_session._get_current_object()()
-
 
     def test_session_different_request(self, flask_app):
         with flask_app.test_request_context():
