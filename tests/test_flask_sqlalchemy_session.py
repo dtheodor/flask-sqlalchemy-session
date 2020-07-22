@@ -28,7 +28,7 @@ def flask_app():
 
 @pytest.fixture
 def unitialized_session(sqlite_engine):
-    """Return a request_scoped_session that has not been used for flask app"""
+    """Return a request_scoped_session that has not been used for a flask app"""
     ses = flask_scoped_session(sessionmaker(bind=sqlite_engine))
     _remove = ses.remove
     ses.remove = mock.Mock(side_effect=_remove)
