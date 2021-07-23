@@ -64,7 +64,7 @@ class flask_scoped_session(scoped_session):
             self.init_app(app)
 
     def init_app(self, app):
-        """Setup scoped sesssion creation and teardown for the passed ``app``.
+        """Setup scoped session creation and teardown for the passed ``app``.
 
         :param app: a :class:`~flask.Flask` application
         """
