@@ -10,9 +10,6 @@ import sys
 import os
 from setuptools import setup
 
-if sys.version_info < (2, 6):
-    raise Exception("Flask-SQLAlchemy-Session requires Python 2.6 or higher.")
-
 # Hard linking doesn't work inside VirtualBox shared folders. This means that
 # you can't use tox in a directory that is being shared with Vagrant,
 # since tox relies on `python setup.py sdist` which uses hard links. As a
@@ -38,14 +35,16 @@ setup(
         'Intended Audience :: Developers',
         'Environment :: Web Environment',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ],
-    install_requires=["sqlalchemy>=0.9", "Flask>=0.9", "Werkzeug>=0.6.1"],
-    tests_require=["pytest>=2.6", "mock>=1.0"],
+    install_requires=["sqlalchemy", "Flask", "Werkzeug"],
+    tests_require=["pytest"],
     extras_require={
-        'docs': ["Sphinx>=1.2.3", "alabaster>=0.6.3"]
+        'docs': ["Sphinx", "alabaster"]
     }
 )

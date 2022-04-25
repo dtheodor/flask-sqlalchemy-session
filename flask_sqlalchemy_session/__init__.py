@@ -48,18 +48,11 @@ class flask_scoped_session(scoped_session):
             :class:`~sqlalchemy.orm.session.Session`
         :param app: a :class:`~flask.Flask` application
         """
-        super(flask_scoped_session, self).__init__(
-            session_factory,
-            scopefunc=_app_ctx_stack.__ident_func__)
-        # the _app_ctx_stack.__ident_func__ is the greenlet.get_current, or
-        # thread.get_ident if no greenlets are used.
-        # each Flask request is launched in a seperate greenlet/thread, so our
-        # session is unique per request
-        # _app_ctx_stack looks like internal API but is the only way to get to
-        # the active application context without adding logic to figure out
-        # whether threads, greenlets, or something else is used to create new
-        # application contexts. Keep in mind to refactor if Flask changes its
-        # public/private API towards this.
+        try:
+            from greenlet import getcurrent as scopefunc
+        except ImportError:
+            scopefunc = None  # let sqlalchemy used default Threading
+        super(flask_scoped_session, self).__init__(session_factory, scopefunc=scopefunc)
         if app is not None:
             self.init_app(app)
 
