@@ -48,7 +48,11 @@ class flask_scoped_session(scoped_session):
             :class:`~sqlalchemy.orm.session.Session`
         :param app: a :class:`~flask.Flask` application
         """
-        super(flask_scoped_session, self).__init__(session_factory)
+        try:
+            from greenlet import getcurrent as scopefunc
+        except ImportError:
+            scopefunc = None  # let sqlalchemy used default Threading
+        super(flask_scoped_session, self).__init__(session_factory, scopefunc=scopefunc)
         if app is not None:
             self.init_app(app)
 
