@@ -8,7 +8,7 @@ unique sessions per Flask request
 """
 # pylint: disable=invalid-name
 from werkzeug.local import LocalProxy
-from flask import _app_ctx_stack, current_app
+from flask import current_app
 from sqlalchemy.orm import scoped_session
 
 __all__ = ["current_session", "flask_scoped_session"]
@@ -17,11 +17,6 @@ __version__ = 1.1
 
 def _get_session():
     # pylint: disable=missing-docstring, protected-access
-    context = _app_ctx_stack.top
-    if context is None:
-        raise RuntimeError(
-            "Cannot access current_session when outside of an application "
-            "context.")
     app = current_app._get_current_object()
     if not hasattr(app, "scoped_session"):
         raise AttributeError(
